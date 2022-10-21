@@ -1,0 +1,3 @@
+const Authorize = (req, res) => {
+    
+};
