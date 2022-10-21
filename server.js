@@ -16,7 +16,12 @@ connectDB();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://azim-shop.web.app",
+    credentials: true,
+  })
+);
 app.use(morgan("dev"));
 // routes
 app.use("/api/product", productRoute);
