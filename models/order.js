@@ -9,7 +9,9 @@ const orderSchema = new Schema({
     type: String,
     required: true,
   },
-
+  phone_number: {
+    type: String,
+  },
   ReceiptNumber: {
     type: String,
   },

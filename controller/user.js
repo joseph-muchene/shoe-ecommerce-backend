@@ -2,12 +2,12 @@ const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const createUser = async (req, res) => {
   try {
-    const { username, email, password, isAdmin } = req.body;
+    const { username, email, password, isAdmin, phone_number } = req.body;
     // check if the user exists
     const registeredUser = await User.findOne({ email });
 
     if (registeredUser) {
-     return res.status(400).json("User already exists");
+      return res.status(400).json("User already exists");
     } else {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
@@ -17,6 +17,7 @@ const createUser = async (req, res) => {
         password: hashedPassword,
         email,
         isAdmin,
+        phone_number,
       });
 
       //   save the user
