@@ -18,7 +18,7 @@ connectDB();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://azim-shop.web.app",
+    origin: "https://azim-shop.web.app",
     credentials: true,
   })
 );
