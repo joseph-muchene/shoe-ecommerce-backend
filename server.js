@@ -8,7 +8,7 @@ const reviewRoute = require("./routes/Reviews");
 const categoryRoute = require("./routes/category");
 const orders = require("./routes/order");
 const morgan = require("morgan");
-const PORT = 5000 || process.env.PORT;
+const PORT = 9001 || process.env.PORT;
 const path = require("path");
 const connectDB = require("./connectDb");
 
