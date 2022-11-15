@@ -43,7 +43,7 @@ const getAllProducts = async (req, res) => {
       .skip((page - 1) * size)
       .limit(limit);
 
-    res.status(200).json({
+    return res.status(200).json({
       products: products,
       data,
     });
@@ -57,7 +57,7 @@ const getProducts = async (req, res) => {
   try {
     const products = await Product.find().limit(10);
 
-    res.status(200).json({
+    return res.status(200).json({
       products: products,
     });
   } catch (err) {
