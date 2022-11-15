@@ -64,6 +64,17 @@ const getProducts = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+const getProductsList = async (req, res) => {
+  try {
+    const products = await Product.find();
+
+    return res.status(200).json({
+      products: products,
+    });
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};
 
 // read product
 const readProduct = async (req, res) => {
@@ -120,6 +131,7 @@ module.exports = {
   createProduct,
   updateProduct,
   listCategories,
+  getProductsList,
   getAllProducts,
   deleteProduct,
   readProduct,
